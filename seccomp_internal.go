@@ -319,7 +319,7 @@ func (f *ScmpFilter) addRuleGeneric(call ScmpSyscall, action ScmpAction, exact b
 		}
 	} else {
 		// We don't support conditional filtering in library version v2.1
-		if !checkVersionAbove(2, 2, 1) {
+		if !checkVersionAbove(2, 1, 1) {
 			return VersionError{
 				message: "conditional filtering is not supported",
 				minimum: "2.2.1",
