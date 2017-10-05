@@ -135,6 +135,8 @@ const (
 	// ActTrace causes the syscall to notify tracing processes with the
 	// given error code. This code can be set with the SetReturnCode method
 	ActTrace ScmpAction = iota
+	// ActLog permits the syscall to continue execution after logging it
+	ActLog ScmpAction = iota
 	// ActAllow permits the syscall to continue execution
 	ActAllow ScmpAction = iota
 )
@@ -295,6 +297,8 @@ func (a ScmpAction) String() string {
 	case ActTrace:
 		return fmt.Sprintf("Action: Notify tracing processes with code %d",
 			(a >> 16))
+	case ActLog:
+		return "Action: Log system call"
 	case ActAllow:
 		return "Action: Allow system call"
 	default:
