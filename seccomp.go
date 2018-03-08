@@ -135,10 +135,12 @@ const (
 	// ActTrace causes the syscall to notify tracing processes with the
 	// given error code. This code can be set with the SetReturnCode method
 	ActTrace ScmpAction = iota
-	// ActLog permits the syscall to continue execution after logging it
-	ActLog ScmpAction = iota
 	// ActAllow permits the syscall to continue execution
 	ActAllow ScmpAction = iota
+	// ActLog permits the syscall to continue execution after logging it.
+	// This action is only usable when libseccomp API level 3 or higher is
+	// supported.
+	ActLog ScmpAction = iota
 )
 
 const (

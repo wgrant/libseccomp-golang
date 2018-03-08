@@ -206,7 +206,7 @@ const (
 	archEnd   ScmpArch = ArchS390X
 	// Comparison boundaries to check for action validity
 	actionStart ScmpAction = ActKill
-	actionEnd   ScmpAction = ActAllow
+	actionEnd   ScmpAction = ActLog
 	// Comparison boundaries to check for comparison operator validity
 	compareOpStart ScmpCompareOp = CompareNotEqual
 	compareOpEnd   ScmpCompareOp = CompareMaskedEqual
