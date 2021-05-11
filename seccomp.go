@@ -117,6 +117,8 @@ const (
 	ArchS390 ScmpArch = iota
 	// ArchS390X represents 64-bit System z/390 syscalls
 	ArchS390X ScmpArch = iota
+	// ArchRISCV64 represents RISCV64
+	ArchRISCV64 ScmpArch = iota
 )
 
 const (
@@ -214,6 +216,8 @@ func GetArchFromString(arch string) (ScmpArch, error) {
 		return ArchS390, nil
 	case "s390x":
 		return ArchS390X, nil
+	case "riscv64":
+		return ArchRISCV64, nil
 	default:
 		return ArchInvalid, fmt.Errorf("cannot convert unrecognized string %s", arch)
 	}
@@ -254,6 +258,8 @@ func (a ScmpArch) String() string {
 		return "s390"
 	case ArchS390X:
 		return "s390x"
+	case ArchRISCV64:
+		return "riscv64"
 	case ArchNative:
 		return "native"
 	case ArchInvalid:
